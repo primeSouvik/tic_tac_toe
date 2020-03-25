@@ -10,19 +10,28 @@ import java.util.Scanner;
 public class Test {
      static Scanner sc = new Scanner(System.in);
     static void play() {
+        int p1Count = 0,p2Count = 0;
         System.out.println("playing");
         char [][] boad = new char [3][3];
+        int res = 1;
         for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++)
-                boad[i][j] = 's';
+            for (int j = 0; j < 3; j++){
+                System.out.println(res);
+                boad[i][j] = Character.forDigit(res, 10);
+                res++;
+            }
         }
         for (char[] row : boad)
             System.out.println(Arrays.toString(row)); 
         for(int i=1;i<=9;i++){
             if (i%2!=0) {
                 System.out.println("player 1 turn ");
-                
-
+                int p = sc.nextInt()-1;
+                int q = sc.nextInt()-1;
+                boad [p][q] = 'X';
+                for (char[] row : boad)
+                    System.out.println("       "+Arrays.toString(row)); 
+                p1Count = p1Count + ;// start here
             }
             else{
                 System.out.println("p2");
